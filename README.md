@@ -24,23 +24,15 @@
 
   ### From Bronze to Gold layer
 
-**Ingestion**: From Data.Gouv website to the lakehouse storage using the MS Fabric native activity "Copy Data" 
+**Ingestion**:<br> From data.gouv website to the lakehouse storage using the MS Fabric native activity "Copy Data" 
 
-**Major Transformations**:
-
-Tranformations are made using PySpark notebooks.
-
-- Cleaning, type corrections, handling null values
-
-- Adding columns (Perimètre, Age groups, GeographyKey)
-
-- Filtering for the last 10 years
+**Major Transformations**:<br>Tranformations are made using PySpark notebooks.
 
 | Data          | Bronze Layer  | Silver Layer  | Gold Layer|
-| ------------- |:-------------:| -------------:|:-------------:|
-| Geography table     | `31 sec` `91 866 lines` | `1min 17 sec`   `120 lines` Removing duplicate values and adding columns Pivoting columns       |         $1600 |
-| Job seekers (*Offres*) table      | `31 sec` `91 866 lines`       |   $12         |         $1600 |
-| Job seekers (*Inscrits*) table | `41 sec`   `128 128 lines`       |    $1         |         $1600 |
+| ------------- |:-------------:|:-------------:|:-------------:|
+| Geography table    | `31 sec`<br>`91 866 lines` | `1min 17 sec`   `120 lines` <br>Remove duplicate values<br>Add and pivot columns       | `55 sec` `100 lines` <br>Delete rows<br>Add the conditional column “Perimeter.” |
+| Job seekers (*Offres*) table      | `31 sec`<br>`91 866 lines`       | `44 sec`   `70 400 lines` <br>Delete columns and rows<br>Correct data types  | `57 sec`   `24 800 lines` <br>Add the GeographyKey column from the Geography table<br>Filter rows (only the last 10 years).       
+| Job seekers (*Inscrits*) table | `41 sec`<br>`128 128 lines`       | `34 sec`   `123 200 lines`<br>Delete, modify, and rename columns<br>Manage null values       | `1min 07sec` `1223 200 lines` <br>Add conditional column “Age_Group.” |
 
 **Monitoring**: Track pipeline executions in a data warehouse. Every pipeline run, no matter the outcome, is registered in a tailored table. This table is also used as a lookup table.
 
