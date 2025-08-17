@@ -38,9 +38,9 @@
 
 **Alerting:** Automatic email in case of failure with a message with all pipeline log and further information to quickly identify the bottleneck.
 
-<img width="903" height="318" alt="ETL process  to LKH _ data offres d'emploi" src="https://github.com/user-attachments/assets/2ba168fd-928e-4e66-9bbe-a011a2bfd32a" />
+<img width="945" height="254" alt="image" src="https://github.com/user-attachments/assets/f7c699c6-b17e-4dc2-930f-17469730f89b" />
 
-*####Screenshot of Pipeline 'Offres et Geography France Travail' - Exécution Time : 5min 15sec*
+*Screenshot of Pipeline 'Offres et Geography France Travail'* - *Exécution Time : 5min 15sec*
 
 
 
