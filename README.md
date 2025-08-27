@@ -7,7 +7,7 @@
 ## Objectives
 **Business:** Understand job market trends in France (2015–2024).
 
-**Technical:** Build an automated end-to-end pipeline with Microsoft Fabric.
+**Technical:** Build an automated end-to-end pipeline with Microsoft Fabric Azure Data Factory.
 
 ## Datasets
 **Job Offers**: Jobs collected and filled, by department (including French overseas territories), with duration type (short/long-term).
